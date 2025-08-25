@@ -5,7 +5,7 @@
 const int BTN_PIN_R = 28;
 volatile int btn_flag = 0;
 
-volatile uint32_t start_time = 0; // guarda tempo do FALL
+// guarda tempo do FALL
 
 void btn_callback(uint gpio, uint32_t events) {
   if (events & GPIO_IRQ_EDGE_FALL) { 
@@ -24,6 +24,8 @@ int main() {
 
   gpio_set_irq_enabled_with_callback(
       BTN_PIN_R, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &btn_callback);
+
+  uint32_t start_time = 0; 
 
   while (true) {
     if(btn_flag == 1){
