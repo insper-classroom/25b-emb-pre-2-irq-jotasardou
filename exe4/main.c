@@ -55,14 +55,12 @@ int main() {
 
   while (true) {
     if(btn_flag_r == 1){
-      // printf("on %d\n", btn_flag_r);
       btn_flag_r = 0;
       led_state_r = !led_state_r;
       gpio_put(LED_PIN_R, led_state_r);
 
     }
-    if(btn_flag_g == 0){
-      // printf("off %d\n", btn_flag_g);
+    if(btn_flag_g == 1){
       btn_flag_g = 0;
       led_state_g = !led_state_g;
       gpio_put(LED_PIN_G, led_state_g);
