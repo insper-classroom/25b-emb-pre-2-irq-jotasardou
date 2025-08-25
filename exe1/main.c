@@ -27,10 +27,10 @@ int main() {
 
   while (true) {
     if(btn_flag == 1){
-      printf("fall %d\n", btn_flag);
+      printf("fall\n");
       btn_flag = 0;
     } else if (btn_flag == 2) {
-      printf("rise %d\n", btn_flag);
+      printf("rise\n");
       btn_flag = 0;
     }
 
