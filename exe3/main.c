@@ -43,10 +43,10 @@ int main() {
 
     while (true) {
         if(g_flag_r) {
-            printf("fall red");
+            printf("fall red\n");
             g_flag_r = 0;
         } else if(g_flag_g) {
-            printf("fall green");
+            printf("fall green\n");
             g_flag_g = 0;
         }
     }
