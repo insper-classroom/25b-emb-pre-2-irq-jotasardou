@@ -42,11 +42,11 @@ int main() {
     gpio_set_irq_enabled(BTN_PIN_G, GPIO_IRQ_EDGE_FALL, true);
 
     while (true) {
-        if(g_flag_r || g_flag_g) {
-            printf("IRQ RED: %d | IRQ GREEN: %d\n", g_flag_r, g_flag_g);
-
-            // clear flags
+        if(g_flag_r) {
+            printf("fall red");
             g_flag_r = 0;
+        } else if(g_flag_g) {
+            printf("fall green");
             g_flag_g = 0;
         }
     }
