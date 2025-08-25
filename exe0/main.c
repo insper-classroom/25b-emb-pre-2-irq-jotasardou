@@ -2,9 +2,6 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
-#include "hardware/gpio.h"
-#include "pico/stdlib.h"
-#include <stdio.h>
 
 const int BTN_PIN_R = 28;
 
