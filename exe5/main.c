@@ -36,7 +36,7 @@ int main() {
         uint32_t end_time = to_ms_since_boot(get_absolute_time());
         uint32_t duration = end_time - start_time;
 
-        if (duration > 800) {
+        if (duration >= 800) {
             printf("Aperto longo!\n");
         } else {
             printf("Aperto curto!\n");
