@@ -34,9 +34,6 @@ int main() {
       btn_flag = 0;
       led_state = !led_state;
       gpio_put(LED_PIN, led_state);
-      
     } 
-
   }
-  
 }
