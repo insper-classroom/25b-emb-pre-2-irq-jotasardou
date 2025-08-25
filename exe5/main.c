@@ -38,9 +38,9 @@ int main() {
         uint32_t duration = end_time - start_time;
 
         if (duration > 800) {
-            printf("long click: %u ms\n", duration);
+            printf("aperto curto: %u ms\n", duration);
         } else {
-            printf("short click: %u ms\n", duration);
+            printf("aperto longo: %u ms\n", duration);
         }
 
         btn_flag = 0;
