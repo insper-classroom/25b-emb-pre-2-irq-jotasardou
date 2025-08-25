@@ -10,14 +10,14 @@ const int BTN_PIN_G = 26;
 const int LED_PIN_G = 6;
 
 volatile int btn_flag_r = 0;
-volatile int btn_flag_g = 1;
+volatile int btn_flag_g = 0;
 
 void btn_callback(uint gpio, uint32_t events) {
   if (events & GPIO_IRQ_EDGE_FALL) { 
     btn_flag_r = 1;
   }
   if (events & GPIO_IRQ_EDGE_RISE) {
-    btn_flag_g = 0;
+    btn_flag_g = 1;
   }
 }
 
@@ -63,7 +63,7 @@ int main() {
     }
     if(btn_flag_g == 0){
       // printf("off %d\n", btn_flag_g);
-      btn_flag_g = 1;
+      btn_flag_g = 0;
       led_state_g = !led_state_g;
       gpio_put(LED_PIN_G, led_state_g);
     }
