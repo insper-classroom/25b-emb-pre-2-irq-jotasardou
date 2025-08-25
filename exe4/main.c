@@ -13,7 +13,7 @@ volatile int btn_flag_r = 0;
 volatile int btn_flag_g = 0;
 
 void btn_callback(uint gpio, uint32_t events) {
-  if (events & GPIO_IRQ_EDGE_FALL) { 
+  if (events  & GPIO_IRQ_EDGE_FALL) { 
     btn_flag_r = 1;
   }
   if (events & GPIO_IRQ_EDGE_RISE) {
@@ -47,11 +47,11 @@ int main() {
 
   gpio_set_irq_enabled_with_callback(
       BTN_PIN_R, GPIO_IRQ_EDGE_FALL, true, &btn_callback);  
-   gpio_set_irq_enabled_with_callback(
-      BTN_PIN_G, GPIO_IRQ_EDGE_RISE, true, &btn_callback); 
+   gpio_set_irq_enabled(
+      BTN_PIN_G, GPIO_IRQ_EDGE_RISE, true);
 
   int led_state_r = 0;
-  int led_state_g = 1;
+  int led_state_g = 0;
 
   while (true) {
     if(btn_flag_r == 1){
