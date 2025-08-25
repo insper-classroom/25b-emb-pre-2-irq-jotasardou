@@ -29,7 +29,6 @@ int main() {
     if(btn_flag == 1){
       // FALL → guarda tempo
       start_time = to_ms_since_boot(get_absolute_time());
-      printf("fall\n");
       btn_flag = 0;
 
     } else if (btn_flag == 2) {
@@ -38,9 +37,9 @@ int main() {
         uint32_t duration = end_time - start_time;
 
         if (duration > 800) {
-            printf("Aperto curto!\n");
-        } else {
             printf("Aperto longo!\n");
+        } else {
+            printf("Aperto curto!\n");
         }
 
         btn_flag = 0;
